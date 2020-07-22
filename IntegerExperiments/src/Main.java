@@ -4,8 +4,8 @@ public class Main
     {
         Container container = new Container();
         container.count += 7843;
-		
-		System.out.println("count = " + container.count);
+
+        System.out.println("count = " + container.count);
 		
 		System.out.println("sumDigits(12345) = " + sumDigits(12345));
 		System.out.println("sumDigits(10) = " + sumDigits(10));
@@ -18,7 +18,8 @@ public class Main
 		int sum = 0;
 		String s = String.valueOf(number);
 		for (int i = 0; i < s.length(); i++) {
-			sum += Integer.parseInt(String.valueOf(s.charAt(i)));
+		    sum += Character.digit(s.charAt(i), 10);
+		    //sum += Integer.parseInt(String.valueOf(s.charAt(i)));
 		}
         return sum;
     }
