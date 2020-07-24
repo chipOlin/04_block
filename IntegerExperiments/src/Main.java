@@ -3,6 +3,7 @@ public class Main
     public static void main(String[] args)
     {
         Container container = new Container();
+        container.count = 1;
         container.count += 7843;
 
         System.out.println("count = " + container.count);
@@ -21,6 +22,9 @@ public class Main
 		    sum += Character.digit(s.charAt(i), 10);
 		    //sum += Integer.parseInt(String.valueOf(s.charAt(i)));
 		}
+		if (sum > 9) {
+            sum = sumDigits(sum);
+        }
         return sum;
     }
 }
