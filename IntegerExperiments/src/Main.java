@@ -22,7 +22,7 @@ public class Main
 		    sum += Character.digit(s.charAt(i), 10);
 		    //sum += Integer.parseInt(String.valueOf(s.charAt(i)));
 		}
-		if (sum > 10) {
+		if (sum > 9) {
             sum = sumDigits(sum);
         }
         return sum;
