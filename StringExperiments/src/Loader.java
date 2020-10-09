@@ -22,7 +22,7 @@ public class Loader
         }*/
 
         //task 3
-        Scanner in = new Scanner(System.in);
+        /*Scanner in = new Scanner(System.in);
         System.out.print("Введите ФИО: ");
         String text = in.nextLine();
         String[] splitText = text.split("\\s");
@@ -30,6 +30,34 @@ public class Loader
         System.out.println("Фамилия: " + splitText[0]);
         System.out.println("Имя: " + splitText[1]);
         System.out.println("Отчество: " + splitText[2]);
+        in.close();*/
+
+        //task 4
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите номер телефона: ");
+        String phone = in.nextLine();
+        phone = phone.replaceAll("\\D+", "");
+        boolean result = phone.matches("[78]?\\d{10}");
+        if (!result) {
+            System.out.println("Неверный формат номера");
+        } else {
+            result = phone.matches("([7])\\d{10}");
+            if (!result) {
+                result = phone.matches("([8])\\d{10}");
+                if (!result) {
+                    result = phone.matches("\\d{10}");
+                    if (!result) {
+                        System.out.println("Неверный формат номера");
+                    } else {
+                        System.out.println("Результат: 7" + phone);
+                    }
+                } else {
+                    System.out.println("Результат: 7" + phone.substring(1));
+                }
+            } else {
+                System.out.println("Результат: " + phone);
+            }
+        }
         in.close();
     }
 }
